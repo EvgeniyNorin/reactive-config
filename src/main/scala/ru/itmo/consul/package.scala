@@ -1,10 +1,8 @@
-package ru.ifmo
+package ru.itmo
 
 package object consul {
 
   final case class KeyValue(key: String, value: String)
-
-  sealed trait WatchType
 
   final case class KeyWatchType(Key: String,
                                 CreateIndex: Long,
@@ -12,6 +10,8 @@ package object consul {
                                 LockIndex: Long,
                                 Flags: Long,
                                 Value: String,
-                                Session: String) extends WatchType
+                                Session: String)
+
+  type KeyPrefixWatchType = List[KeyWatchType]
 
 }
