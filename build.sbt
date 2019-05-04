@@ -25,7 +25,13 @@ val http4sDependencies = Seq(
   "org.http4s" %% "http4s-dsl" % Http4sVersion,
 )
 
+val loggingDependencies = Seq(
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
+  "ch.qos.logback" % "logback-classic" % "1.2.3"
+)
+
 libraryDependencies ++=
   monixDependencies ++
     circeDependencies ++
-    http4sDependencies
+    http4sDependencies ++
+    loggingDependencies
